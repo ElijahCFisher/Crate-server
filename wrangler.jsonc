@@ -12,7 +12,7 @@
   ],
 
   "vars": {
-    "FRONTEND_ORIGIN": "https://food-rating.pages.dev",
+    "FRONTEND_ORIGINS": ["https://food-rating.pages.dev", "dev.food-rating.pages.dev"],
     "GOOGLE_CLIENT_ID": "625240459859-ctpa9v87hu22np0ut1gtsugnk6aej59a.apps.googleusercontent.com",
     "COOKIE_NAME": "__Host-crate_session"
   }

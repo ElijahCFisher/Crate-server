@@ -50,9 +50,10 @@ function json(data, status = 200, extraHeaders = {}) {
 
 function corsHeaders(request, env) {
   const origin = request.headers.get('Origin');
+  const allowedOrigins = getAllowedOrigins(env);
   const headers = { Vary: 'Origin' };
 
-  if (origin && origin === env.FRONTEND_ORIGIN) {
+  if (origin && allowedOrigins.includes(origin)) {
     headers['Access-Control-Allow-Origin'] = origin;
     headers['Access-Control-Allow-Credentials'] = 'true';
   }
@@ -238,9 +239,18 @@ async function handleLogout(env) {
   );
 }
 
+function getAllowedOrigins(env) {
+  return (env.FRONTEND_ORIGINS || '')
+    .split(',')
+    .map(s => s.trim())
+    .filter(Boolean);
+}
+
 function verifyFrontendOrigin(request, env) {
   const origin = request.headers.get('Origin');
-  if (origin !== env.FRONTEND_ORIGIN) {
+  const allowedOrigins = getAllowedOrigins(env);
+
+  if (!origin || !allowedOrigins.includes(origin)) {
     throw httpError(403, 'Invalid Origin');
   }
 }
