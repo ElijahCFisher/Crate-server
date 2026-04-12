@@ -7,13 +7,13 @@
     {
       "binding": "DB",
       "database_name": "crate-auth",
-      "database_id": "PUT_YOUR_D1_DATABASE_ID_HERE"
+      "database_id": "c8409460-0f83-4158-94c7-594c7ea68b59"
     }
   ],
 
   "vars": {
     "FRONTEND_ORIGIN": "https://food-rating.pages.dev",
-    "GOOGLE_CLIENT_ID": "YOUR_GOOGLE_WEB_CLIENT_ID",
+    "GOOGLE_CLIENT_ID": "625240459859-ctpa9v87hu22np0ut1gtsugnk6aej59a.apps.googleusercontent.com",
     "COOKIE_NAME": "__Host-crate_session"
   }
 }
