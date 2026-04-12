@@ -1,0 +1,19 @@
+{
+  "name": "crate-auth-broker",
+  "main": "src/index.js",
+  "compatibility_date": "2026-04-12",
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "crate-auth",
+      "database_id": "PUT_YOUR_D1_DATABASE_ID_HERE"
+    }
+  ],
+
+  "vars": {
+    "FRONTEND_ORIGIN": "https://food-rating.pages.dev",
+    "GOOGLE_CLIENT_ID": "YOUR_GOOGLE_WEB_CLIENT_ID",
+    "COOKIE_NAME": "__Host-crate_session"
+  }
+}
