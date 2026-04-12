@@ -97,6 +97,8 @@ async function handleGoogleCode(request, env) {
     throw httpError(400, 'Missing authorization code');
   }
 
+  const origin = request.headers.get('Origin');
+
   const tokenRes = await fetch(GOOGLE_TOKEN_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -104,7 +106,7 @@ async function handleGoogleCode(request, env) {
       code,
       client_id: env.GOOGLE_CLIENT_ID,
       client_secret: env.GOOGLE_CLIENT_SECRET,
-      redirect_uri: env.FRONTEND_ORIGIN,
+      redirect_uri: origin,
       grant_type: 'authorization_code',
     }),
   });
