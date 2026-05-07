@@ -374,6 +374,7 @@ async function parseSessionCookie(request, env) {
 
   const raw = cookies[cookieName];
   if (!raw) return null;
+  if (!env.COOKIE_SIGNING_SECRET) return null;
 
   const [encodedPayload, signature] = raw.split('.');
   if (!encodedPayload || !signature) return null;

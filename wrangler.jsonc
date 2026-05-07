@@ -14,6 +14,7 @@
   "vars": {
     "FRONTEND_ORIGINS": "https://food-rating.pages.dev,https://dev.food-rating.pages.dev,http://localhost:3000,https://elijah-fisher.com",
     "GOOGLE_CLIENT_ID": "625240459859-ctpa9v87hu22np0ut1gtsugnk6aej59a.apps.googleusercontent.com",
-    "COOKIE_NAME": "__Host-crate_session"
+    "COOKIE_NAME": "__Host-crate_session",
+    "COOKIE_SIGNING_SECRET": "bw7E3Gh8NN7iFWUc_DSumgPBu1cFErp05c4eVSxQzjE"
   }
 }
